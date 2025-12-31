@@ -67,13 +67,21 @@ def chat(request: ChatRequest):
     
     rpc_params = {
         "query_embedding": query_embedding,
-        "match_threshold": 0.5, # Configurable
+        "match_threshold": 0.3, # Lowered from 0.5 to catch more context
         "match_count": 5,
         "filter_source_ids": filter_ids
     }
     
     response = supabase.rpc("match_chunks", rpc_params).execute()
     matches = response.data
+    
+    # Debug Logging
+    print(f"Query: {request.question}")
+    print(f"Found {len(matches)} matches.")
+    if matches:
+        print(f"Top match similarity: {matches[0].get('similarity', 0)}")
+        print(f"Top match content snippet: {matches[0].get('content', '')[:100]}...")
+
     
     # 3. Generate Answer
     if not matches:

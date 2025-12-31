@@ -60,22 +60,31 @@ pip install -r requirements.txt
 
 ---
 
+---
+
 ## Шаг 4: Запуск Приложения
 
-Вам потребуется запустить два процесса в двух разных терминалах.
+### Быстрый запуск (Makefile)
+Если у вас установлен `make`, вы можете запустить все одной командой:
+```bash
+make run
+```
+*   API: `http://localhost:8000`
+*   UI: `http://localhost:8501`
 
-### Терминал 1: Backend (FastAPI)
-Запускает API сервер, который обрабатывает загрузку файлов и логику чата.
+### Ручной запуск
+Если вы не используете make, запустите два терминала:
 
+#### Терминал 1: Backend (FastAPI)
+Запускает API сервер.
 ```bash
 uvicorn backend.main:app --reload
 ```
 *   API будет доступно по адресу: `http://localhost:8000`
 *   Документация Swagger UI: `http://localhost:8000/docs`
 
-### Терминал 2: Frontend (Streamlit)
+#### Терминал 2: Frontend (Streamlit)
 Запускает веб-интерфейс.
-
 ```bash
 streamlit run frontend/app.py
 ```

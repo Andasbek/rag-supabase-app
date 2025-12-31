@@ -25,9 +25,10 @@ def generate_answer(question: str, context_chunks: List[str]) -> str:
             "role": "system",
             "content": (
                 "You are a helpful assistant for a Question Answering system. "
-                "Use the following pieces of retrieved context to answer the user's question. "
-                "If the answer is not in the context, say that you don't know. "
-                "Do not make up sources or information."
+                "Use the provided context to answer the user's question. "
+                "If the answer is NOT in the context, simply say: 'I cannot find the answer in the provided documents.' "
+                "Do not hallucinate or use outside knowledge. "
+                "Always answer in the same language as the user's question."
             )
         },
         {
