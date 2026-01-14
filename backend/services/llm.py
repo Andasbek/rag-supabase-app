@@ -8,7 +8,7 @@ load_dotenv()
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 EMBEDDING_MODEL = os.environ.get("EMBEDDINGS_MODEL", "text-embedding-3-small")
-LLM_MODEL = os.environ.get("LLM_MODEL", "gpt-4o-mini")
+LLM_MODEL = os.environ.get("LLM_MODEL", "gpt-5")
 
 def get_embedding(text: str) -> List[float]:
     """Generates embedding for a single string."""
@@ -39,8 +39,7 @@ def generate_answer(question: str, context_chunks: List[str]) -> str:
 
     response = client.chat.completions.create(
         model=LLM_MODEL,
-        messages=messages,
-        temperature=0.1
+        messages=messages
     )
     
     return response.choices[0].message.content

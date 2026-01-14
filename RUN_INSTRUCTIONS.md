@@ -19,6 +19,11 @@ make run
     make install
     ```
 
+*   **Настройка окружения (venv)**:
+    ```bash
+    make venv
+    ```
+
 *   **Запуск только Backend**:
     ```bash
     make run-api

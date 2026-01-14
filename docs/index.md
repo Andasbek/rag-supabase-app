@@ -23,13 +23,18 @@
 *   **Чат**: Привычный формат диалога для взаимодействия с системой.
 
 ## Технологический стек
+Подробное описание стека доступно в [Tech Stack](tech_stack.md).
+
+## Структура проекта
+Описание файлов и папок: [Project Structure](project_structure.md).
+
 
 *   **Backend**: [FastAPI](https://fastapi.tiangolo.com/) — высокопроизводительный асинхронный веб-фреймворк.
 *   **Frontend**: [Streamlit](https://streamlit.io/) — библиотека для быстрого создания data science приложений.
 *   **База данных**: [Supabase](https://supabase.com/) (PostgreSQL) с расширением `pgvector` для хранения векторов.
 *   **AI Модели**:
     *   **Embeddings**: OpenAI `text-embedding-3-small` (для превращения текста в векторы).
-    *   **LLM**: OpenAI `gpt-4o-mini` (для генерации ответов).
+    *   **LLM**: OpenAI `gpt-5` (для генерации ответов).
 *   **Язык**: Python 3.9+
 
 ## Дальнейшее развитие
